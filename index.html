@@ -7,10 +7,11 @@
 	<script type="text/javascript">
 		/** NOTE: THIS GAME DOES NOT HAVE ANY EXCEPTION HANDLERS.
 		* 		  YOU MUST ENTER THE APPROPRIATELY SPELLED CHOICES
-		*         OF EITHER ROCK, PAPER, OR SCISSORS
-		*		  (CASE INSENSITIVE).
+		*         OF EITHER ROCK, PAPER, OR SCISSORS. ElSE YOU 
+		*		  LOSE THAT ROUND (CASE INSENSITIVE).
 		*			
-		*		  THIS IS A CONSOLE GAME. RESULTS ARE PRINTED OUT.
+		*		  THIS IS A CONSOLE GAME. RESULTS ARE PRINTED OUT TO
+		*		  THE CONSOLE.
 		**/
 
 		// stores all available choices for game
@@ -52,6 +53,8 @@
 					else {
 						return "You win! Scissors beats Paper";
 					}
+				default:
+					return "Error. You spelled your choice incorrectly. You lose this round."	
 			}
 		}
 
@@ -84,7 +87,7 @@
 			winCount > 2 ? 
 			console.log(`GAME OVER! You won! (${winCount}/5)`) : 
 			(winCount >= Math.ceil((5 - tieCount)/2)) ? 
-			console.log(`GAME OVER! You won! (${winCount}/5)`) :
+			console.log(`GAME OVER! It's a tie! (${winCount}/5)`) :
 			console.log(`GAME OVER! You lost! (${winCount}/5)`);
 		}
 
