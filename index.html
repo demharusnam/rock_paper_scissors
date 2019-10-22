@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock, Paper, Scissors</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// stores all available choices for game
+		const choice = ["rock", "paper", "scissors"];
+		// randomly decides which of the available options the computer picks
+		let computerPlay = () => choice[Math.floor(Math.random(2)*3)];
+		// compares player choice with computer choice and returns result
+		let playRound = (playerSelection, computerSelection) => {
+			playerSelection = playerSelection.toLowerCase();
+			switch(playerSelection) {
+				case "rock":
+					if (computerSelection == "rock") {
+						return "It's a tie! Rock and Rock";
+					}
+					else if (computerSelection == "paper") {
+						return "You lose! Paper beats Rock";
+					}
+					else {
+						return "You win! Rock beats Scissors";
+					}
+				case "paper":
+					if (computerSelection == "paper") {
+						return "It's a tie! Paper and Paper";
+					}
+					else if (computerSelection == "scissors") {
+						return "You lose! Scissors beats Paper";
+					}
+					else {
+						return "You win! Paper beats Rock";
+					}
+				case "scissors":
+					if (computerSelection == "scissors") {
+						return "It's a tie! Scissors and Scissors";
+					}
+					else if (computerSelection == "rock") {
+						return "You lose! Rock beats Scissors";
+					}
+					else {
+						return "You win! Scissors beats Paper";
+					}
+			}
+		}
+
+		// select player choice. Vary between the available choices as you see fit.
+		// see const choice (line 9) for all available options.
+		playerSelection = "rock";
+		// plays game
+		console.log(playRound(playerSelection, computerPlay()));
+	</script>
+</body>
+</html>
